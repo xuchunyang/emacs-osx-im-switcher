@@ -1,10 +1,10 @@
 # The root path of Emacs repository
 ROOT = $(HOME)/wip/emacs
 
-CC      = gcc
-LD      = gcc
-CFLAGS  = -ggdb3 -Wall
-LDFLAGS =
+CC      = clang
+LD      = clang
+CFLAGS  = -ggdb3 -Wall -fPIC
+LDFLAGS = -framework Carbon -framework Foundation
 
 all: osx-im.so
 

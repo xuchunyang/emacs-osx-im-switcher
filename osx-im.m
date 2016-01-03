@@ -1,13 +1,17 @@
 #include <emacs-module.h>
 #include <string.h>
 
+#import <Foundation/Foundation.h>
+#import <Carbon/Carbon.h>
+
 int plugin_is_GPL_compatible;
 
 static emacs_value
 Fosx_im_current_im (emacs_env *env, int nargs, emacs_value args[], void *data)
 {
-  char *str = "English U.S.";
-  return env->make_string (env, str, strlen(str));
+  TISInputSourceRef cur_im = TISCopyCurrentKeyboardInputSource ();
+  const char *cur_im_rdns_name = [TISGetInputSourceProperty (cur_im, kTISPropertyInputSourceID) UTF8String];
+  return env->make_string (env, cur_im_rdns_name, strlen(cur_im_rdns_name));
 }
 
 /* Bind NAME to FUN.  */
