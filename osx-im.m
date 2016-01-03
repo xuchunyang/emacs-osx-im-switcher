@@ -59,7 +59,7 @@ emacs_module_init (struct emacs_runtime *ert)
 {
   emacs_env *env = ert->get_environment (ert);
   bind_function (env, "osx-im-current-im",
-                 env->make_function (env, 0, 0, Fosx_im_current_im, "Current the current Input method", NULL));
+                 env->make_function (env, 0, 0, Fosx_im_current_im, "Return the name of current Input method.", NULL));
 
   provide (env, "osx-im");
   return 0;
