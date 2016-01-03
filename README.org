@@ -1,0 +1,22 @@
+* osx-im
+
+An Emacs module to control input method on Mac OS X
+
+** Building module
+
+#+BEGIN_SRC shell
+ROOT=/path/to/emacs/repo/ make
+#+END_SRC
+
+** Loading module
+
+#+BEGIN_SRC emacs-lisp
+(module-load (expand-file-name "/path/to/osx-input-method-switcher/osx-im.so"))
+#+END_SRC
+
+** Using module
+
+#+BEGIN_SRC emacs-lisp
+(osx-im-current-im)
+    ⇒ "com.apple.keylayout.US"
+#+END_SRC

@@ -1,5 +1,5 @@
 # The root path of Emacs repository
-ROOT = $(HOME)/wip/emacs
+ROOT ?= $(HOME)/wip/emacs
 
 CC      = clang
 LD      = clang
